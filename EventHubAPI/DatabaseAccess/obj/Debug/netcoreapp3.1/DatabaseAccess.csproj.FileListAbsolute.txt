@@ -1,0 +1,10 @@
+C:\Users\user\Desktop\desktop\wad\wad-coursework\EventHubAPI\DatabaseAccess\bin\Debug\netcoreapp3.1\DatabaseAccess.deps.json
+C:\Users\user\Desktop\desktop\wad\wad-coursework\EventHubAPI\DatabaseAccess\bin\Debug\netcoreapp3.1\DatabaseAccess.dll
+C:\Users\user\Desktop\desktop\wad\wad-coursework\EventHubAPI\DatabaseAccess\bin\Debug\netcoreapp3.1\DatabaseAccess.pdb
+C:\Users\user\Desktop\desktop\wad\wad-coursework\EventHubAPI\DatabaseAccess\obj\Debug\netcoreapp3.1\DatabaseAccess.csproj.AssemblyReference.cache
+C:\Users\user\Desktop\desktop\wad\wad-coursework\EventHubAPI\DatabaseAccess\obj\Debug\netcoreapp3.1\DatabaseAccess.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\user\Desktop\desktop\wad\wad-coursework\EventHubAPI\DatabaseAccess\obj\Debug\netcoreapp3.1\DatabaseAccess.AssemblyInfoInputs.cache
+C:\Users\user\Desktop\desktop\wad\wad-coursework\EventHubAPI\DatabaseAccess\obj\Debug\netcoreapp3.1\DatabaseAccess.AssemblyInfo.cs
+C:\Users\user\Desktop\desktop\wad\wad-coursework\EventHubAPI\DatabaseAccess\obj\Debug\netcoreapp3.1\DatabaseAccess.csproj.CoreCompileInputs.cache
+C:\Users\user\Desktop\desktop\wad\wad-coursework\EventHubAPI\DatabaseAccess\obj\Debug\netcoreapp3.1\DatabaseAccess.dll
+C:\Users\user\Desktop\desktop\wad\wad-coursework\EventHubAPI\DatabaseAccess\obj\Debug\netcoreapp3.1\DatabaseAccess.pdb

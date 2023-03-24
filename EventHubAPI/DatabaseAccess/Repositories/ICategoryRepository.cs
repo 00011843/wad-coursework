@@ -1,11 +1,11 @@
-﻿using DatabaseAccess.Models;
+﻿using EventHubAPI.Models;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace DatabaseAccess.Repositories
+namespace EventHubAPI.Repositories
 {
-    internal interface ICategoryRepository
+    public interface ICategoryRepository
     {
         void CreateNewCategory(Category category);
 

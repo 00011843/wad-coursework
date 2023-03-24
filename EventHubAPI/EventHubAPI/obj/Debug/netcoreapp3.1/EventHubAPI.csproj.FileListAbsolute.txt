@@ -1,0 +1,6 @@
+C:\Users\user\Desktop\desktop\wad\wad-coursework\EventHubAPI\EventHubAPI\obj\Debug\netcoreapp3.1\EventHubAPI.csproj.AssemblyReference.cache
+C:\Users\user\Desktop\desktop\wad\wad-coursework\EventHubAPI\EventHubAPI\obj\Debug\netcoreapp3.1\EventHubAPI.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\user\Desktop\desktop\wad\wad-coursework\EventHubAPI\EventHubAPI\obj\Debug\netcoreapp3.1\EventHubAPI.AssemblyInfoInputs.cache
+C:\Users\user\Desktop\desktop\wad\wad-coursework\EventHubAPI\EventHubAPI\obj\Debug\netcoreapp3.1\EventHubAPI.AssemblyInfo.cs
+C:\Users\user\Desktop\desktop\wad\wad-coursework\EventHubAPI\EventHubAPI\obj\Debug\netcoreapp3.1\EventHubAPI.csproj.CoreCompileInputs.cache
+C:\Users\user\Desktop\desktop\wad\wad-coursework\EventHubAPI\EventHubAPI\obj\Debug\netcoreapp3.1\EventHubAPI.MvcApplicationPartsAssemblyInfo.cache

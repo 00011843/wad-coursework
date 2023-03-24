@@ -10,7 +10,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-
+using EventHubAPI.DAL;
+using Microsoft.EntityFrameworkCore;
+using EventHubAPI.Repositories;
 
 namespace EventHubAPI
 {
@@ -26,8 +28,9 @@ namespace EventHubAPI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<EventContext>
+            services.AddDbContext<EventContext>(options => options.UseSqlServer(Configuration.GetConnectionString("EventHubDB")));
             services.AddControllers();
+            services.AddTransient <ICategoryRepository CategoryRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

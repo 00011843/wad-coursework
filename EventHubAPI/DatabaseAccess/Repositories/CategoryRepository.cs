@@ -1,12 +1,12 @@
-﻿using DatabaseAccess.DAL;
-using DatabaseAccess.Models;
+﻿using EventHubAPI.DAL;
+using EventHubAPI.Models;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace DatabaseAccess.Repositories
+namespace EventHubAPI.Repositories
 {
     public class CategoryRepository : ICategoryRepository
     {
@@ -48,7 +48,7 @@ namespace DatabaseAccess.Repositories
         public void UpdateCategory(Category category)
         {
             //Modify the category through EntityFrameworCore EnttiyState module
-            __dbContext.Entry(category).State = EntityState.Modified;
+            __dbContext.Entry(category).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
             Save();
         }
     }

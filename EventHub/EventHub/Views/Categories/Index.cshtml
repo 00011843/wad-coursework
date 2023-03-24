@@ -1,0 +1,59 @@
+﻿@model IEnumerable<EventHub.Models.Category>
+
+@{
+    ViewData["Title"] = "Index";
+}
+@section Scripts{
+    <script>
+        $(function () {
+            loadData();
+        })
+        function loadData() {
+            $.ajax({
+                url: 'https://localhost:44320/api/categories/',
+                type: "GET",
+                dataType: "json",
+                success: function (result) {
+                    console.log(result);
+                    var html = '';
+                    $.each(result, function (key, item) {
+                        html += '<tr>';
+                        html += '<td>' + item.id + '</td>';
+                        html += '<td>' + item.name + '</td>';
+                        html += '<td>' + item.description + '</td>';
+                        
+                    });
+                    $('#index_table_body').html(html);
+                },
+                error: function (errormessage) {
+                    alert(errormessage.responseText);
+                }
+            });
+        }
+    </script>
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+         
+            <th></th>
+        </tr>
+    </thead>
+    <tbody id="index_table_body">
+    </tbody>
+</table>

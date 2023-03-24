@@ -30,7 +30,7 @@ namespace EventHubAPI
         {
             services.AddDbContext<EventContext>(options => options.UseSqlServer(Configuration.GetConnectionString("EventHubDB")));
             services.AddControllers();
-            services.AddTransient <ICategoryRepository CategoryRepository>();
+            services.AddTransient<ICategoryRepository, CategoryRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -42,7 +42,7 @@ namespace EventHubAPI
             }
 
             app.UseHttpsRedirection();
-
+            app.UseCors(policy => policy.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin());
             app.UseRouting();
 
             app.UseAuthorization();

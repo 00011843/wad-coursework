@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "J5BeSHv9pKcAT+HjGjXvBJhGAx8l+vmr5rLtWAMc1H9s1krQTWG1DzFjffDEwkZTY1cxTOzFo1zyF9cmRU1uOg==",
+  "dgSpecHash": "0LMQ9uuLn+uT8wOI2dUuOlTki26/1rN9Q2SMXnQaX4r5Qg2LQFTT8vppHDMzO8B5iubeN+bNSV/wGJjNJQ4XGg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\user\\JohnDev\\github\\wad-coursework\\EventHubAPI\\EventHubAPI\\EventHubAPI.csproj",
+  "projectFilePath": "C:\\Users\\user\\Desktop\\desktop\\wad\\wad-coursework\\EventHubAPI\\EventHubAPI\\EventHubAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\user\\.nuget\\packages\\microsoft.aspnetcore.html.abstractions\\2.2.0\\microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\microsoft.aspnetcore.razor\\2.2.0\\microsoft.aspnetcore.razor.2.2.0.nupkg.sha512",

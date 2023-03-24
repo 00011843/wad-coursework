@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace DatabaseAccess.Models
+namespace EventHubAPI.Models
 {
     public class Event
     {

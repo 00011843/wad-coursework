@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\user\\JohnDev\\github\\wad-coursework\\EventHubAPI\\EventHubAPI\\EventHubAPI.csproj": {}
+    "C:\\Users\\user\\Desktop\\desktop\\wad\\wad-coursework\\EventHubAPI\\EventHubAPI\\EventHubAPI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\user\\JohnDev\\github\\wad-coursework\\EventHubAPI\\DatabaseAccess\\DatabaseAccess.csproj": {
+    "C:\\Users\\user\\Desktop\\desktop\\wad\\wad-coursework\\EventHubAPI\\DatabaseAccess\\DatabaseAccess.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\user\\JohnDev\\github\\wad-coursework\\EventHubAPI\\DatabaseAccess\\DatabaseAccess.csproj",
+        "projectUniqueName": "C:\\Users\\user\\Desktop\\desktop\\wad\\wad-coursework\\EventHubAPI\\DatabaseAccess\\DatabaseAccess.csproj",
         "projectName": "DatabaseAccess",
-        "projectPath": "C:\\Users\\user\\JohnDev\\github\\wad-coursework\\EventHubAPI\\DatabaseAccess\\DatabaseAccess.csproj",
+        "projectPath": "C:\\Users\\user\\Desktop\\desktop\\wad\\wad-coursework\\EventHubAPI\\DatabaseAccess\\DatabaseAccess.csproj",
         "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\user\\JohnDev\\github\\wad-coursework\\EventHubAPI\\DatabaseAccess\\obj\\",
+        "outputPath": "C:\\Users\\user\\Desktop\\desktop\\wad\\wad-coursework\\EventHubAPI\\DatabaseAccess\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -65,14 +65,14 @@
         }
       }
     },
-    "C:\\Users\\user\\JohnDev\\github\\wad-coursework\\EventHubAPI\\EventHubAPI\\EventHubAPI.csproj": {
+    "C:\\Users\\user\\Desktop\\desktop\\wad\\wad-coursework\\EventHubAPI\\EventHubAPI\\EventHubAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\user\\JohnDev\\github\\wad-coursework\\EventHubAPI\\EventHubAPI\\EventHubAPI.csproj",
+        "projectUniqueName": "C:\\Users\\user\\Desktop\\desktop\\wad\\wad-coursework\\EventHubAPI\\EventHubAPI\\EventHubAPI.csproj",
         "projectName": "EventHubAPI",
-        "projectPath": "C:\\Users\\user\\JohnDev\\github\\wad-coursework\\EventHubAPI\\EventHubAPI\\EventHubAPI.csproj",
+        "projectPath": "C:\\Users\\user\\Desktop\\desktop\\wad\\wad-coursework\\EventHubAPI\\EventHubAPI\\EventHubAPI.csproj",
         "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\user\\JohnDev\\github\\wad-coursework\\EventHubAPI\\EventHubAPI\\obj\\",
+        "outputPath": "C:\\Users\\user\\Desktop\\desktop\\wad\\wad-coursework\\EventHubAPI\\EventHubAPI\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -89,8 +89,8 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "C:\\Users\\user\\JohnDev\\github\\wad-coursework\\EventHubAPI\\DatabaseAccess\\DatabaseAccess.csproj": {
-                "projectPath": "C:\\Users\\user\\JohnDev\\github\\wad-coursework\\EventHubAPI\\DatabaseAccess\\DatabaseAccess.csproj"
+              "C:\\Users\\user\\Desktop\\desktop\\wad\\wad-coursework\\EventHubAPI\\DatabaseAccess\\DatabaseAccess.csproj": {
+                "projectPath": "C:\\Users\\user\\Desktop\\desktop\\wad\\wad-coursework\\EventHubAPI\\DatabaseAccess\\DatabaseAccess.csproj"
               }
             }
           }

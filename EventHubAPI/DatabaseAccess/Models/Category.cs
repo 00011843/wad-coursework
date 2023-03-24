@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace EventHubAPI.Models
+namespace DatabaseAccess.Models
 {
     public class Category
     {

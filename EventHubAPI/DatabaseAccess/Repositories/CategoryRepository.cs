@@ -1,12 +1,12 @@
-﻿using EventHubAPI.DAL;
-using EventHubAPI.Models;
+﻿using DatabaseAccess.DAL;
+using DatabaseAccess.Models;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace EventHubAPI.Repositories
+namespace DatabaseAccess.Repositories
 {
     public class CategoryRepository : ICategoryRepository
     {

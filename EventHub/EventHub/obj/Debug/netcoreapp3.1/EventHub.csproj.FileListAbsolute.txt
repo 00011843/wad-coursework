@@ -113,3 +113,4 @@ C:\Users\user\Desktop\desktop\wad\wad-coursework\EventHub\EventHub\obj\Debug\net
 C:\Users\user\Desktop\desktop\wad\wad-coursework\EventHub\EventHub\obj\Debug\netcoreapp3.1\EventHub.pdb
 C:\Users\user\Desktop\desktop\wad\wad-coursework\EventHub\EventHub\obj\Debug\netcoreapp3.1\EventHub.genruntimeconfig.cache
 C:\Users\user\Desktop\desktop\wad\wad-coursework\EventHub\EventHub\obj\Debug\netcoreapp3.1\Razor\Views\Categories\Index.cshtml.g.cs
+C:\Users\user\Desktop\desktop\wad\wad-coursework\EventHub\EventHub\obj\Debug\netcoreapp3.1\Razor\Views\Categories\Create.cshtml.g.cs

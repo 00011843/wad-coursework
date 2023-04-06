@@ -1,0 +1,37 @@
+﻿@model EventHub.Models.Category
+
+@{
+    ViewData["Title"] = "Create";
+}
+@section Scripts{
+    <script>
+        
+    </script>
+}
+
+<h1>Create</h1>
+
+<h4>Catetgories</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+
+
+
+        <div class="form-group">
+            <label for="create_name" class="control-label"></label>
+            <input id="create_name" class="form-control" placeholder="Category Name" />
+        </div>
+        <div class="form-group">
+            <label for="create_desc" class="control-label"></label>
+            <input id="create_desc" class="form-control" placeholder="About Category" />
+        </div>
+        <div>
+            <input type="submit" name="Create" value="Create" onclick="CreateNew();" />
+        </div>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>

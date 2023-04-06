@@ -5,31 +5,7 @@
 }
 @section Scripts{
     <script>
-        $(function () {
-            loadData();
-        })
-        function loadData() {
-            $.ajax({
-                url: 'https://localhost:44320/api/categories/',
-                type: "GET",
-                dataType: "json",
-                success: function (result) {
-                    console.log(result);
-                    var html = '';
-                    $.each(result, function (key, item) {
-                        html += '<tr>';
-                        html += '<td>' + item.id + '</td>';
-                        html += '<td>' + item.name + '</td>';
-                        html += '<td>' + item.description + '</td>';
-                        
-                    });
-                    $('#index_table_body').html(html);
-                },
-                error: function (errormessage) {
-                    alert(errormessage.responseText);
-                }
-            });
-        }
+        
     </script>
 }
 

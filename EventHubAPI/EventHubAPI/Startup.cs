@@ -16,8 +16,11 @@ using EventHubAPI.Repositories;
 
 namespace EventHubAPI
 {
+    
     public class Startup
     {
+        private const string DATA_DIRECTORY = "|DataDirectory|";
+        private string _dataDirectoryPath;
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;

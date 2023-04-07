@@ -4,6 +4,8 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Linq;
+using System.Diagnostics;
+using Microsoft.EntityFrameworkCore;
 
 namespace EventHubAPI.Repositories
 {
@@ -21,34 +23,45 @@ namespace EventHubAPI.Repositories
             __dbContext.SaveChanges();
         }
 
+        private Event FindEventById(int eventId)
+        {
+            return __dbContext.Events.Find(eventId);
+        }
+
         public void CreateNewEvent(Event ev)
         {
+            if (ev.EventCategory != null)
+            {
+                ev.EventCategory = __dbContext.Categories.FirstOrDefault(c => c.Id == ev.EventCategory.Id);
+            }
             __dbContext.Add(ev);
             Save();
         }
 
-        public void DeleteEventById(int EventId)
+        public void DeleteEventById(int eventId)
         {
-            var foundEvent = __dbContext.Events.Find(EventId);
+            var foundEvent = FindEventById(eventId);
             __dbContext.Events.Remove(foundEvent);
             Save();
         }
 
         public IEnumerable<Event> GetAllEvents()
         {
-            return __dbContext.Events.ToList();
+            return __dbContext.Events.Include(s => s.EventCategory).ToList();
         }
 
-        public Event GetEventById(int EventId)
+        public Event GetEventById(int eventId)
         {
-            return __dbContext.Events.Find(EventId);
+            var ev = FindEventById(eventId);
+            __dbContext.Entry(ev).Reference(s => s.EventCategory).Load();
+            return ev;
         }
 
         public void UpdateEvent(Event ev)
         {
-            //Modify the ev through EntityFrameworCore EnttiyState module
             __dbContext.Entry(ev).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
             Save();
+            
         }
     }
 }

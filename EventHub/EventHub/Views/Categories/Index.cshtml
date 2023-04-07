@@ -1,35 +1,114 @@
-﻿@model IEnumerable<EventHub.Models.Category>
-
-@{
-    ViewData["Title"] = "Index";
-}
-@section Scripts{
-    <script>
-        
-    </script>
+﻿@{
+    ViewData["Title"] = "Category";
 }
 
-<h1>Index</h1>
+<h2>Category</h2>
+<hr />
+<div ng-app="CategoryCtrl">
+    <div ng-view>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Id)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Name)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Description)
-            </th>
-         
-            <th></th>
-        </tr>
-    </thead>
-    <tbody id="index_table_body">
-    </tbody>
-</table>
+    </div>
+
+</div>
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular-route.min.js"></script>
+
+<script type="text/javascript">
+
+    var apiURL = 'https://localhost:44320/api/'
+
+
+
+    angular
+        .module('CategoryCtrl', ['ngRoute'])
+        .config(function ($routeProvider) {
+            $routeProvider
+                .when('/',
+                    {
+                        templateUrl: 'pages/category/index.html',
+                        controller: 'IndexController'
+                    })
+                .when('/create',
+                    {
+                        templateUrl: 'pages/category/create.html',
+                        controller: 'CreateController'
+                    })
+                .when('/details/:Id',
+                    {
+                        templateUrl: 'pages/category/details.html',
+                        controller: 'DetailsController'
+                    })
+
+                .when('/edit/:Id',
+                    {
+                        templateUrl: 'pages/category/edit.html',
+                        controller: 'EditDeleteController'
+                    })
+                .otherwise({
+                    redirectTo: '/'
+                });
+
+        })
+        .controller('IndexController', ['$scope', '$http', function ($scope, $http) {
+            $scope.categories = [];
+            $http.get(apiURL + 'categories/')
+                .then(function (res) {
+
+                    $scope.categories = res.data;
+                })
+                
+        }])
+        .controller('CreateController', ['$scope', '$http', '$location', function ($scope, $http, $location) {
+            $scope.category =
+            {
+                id: 0,
+                name: '',
+                description: '',
+            };
+            $scope.AddCategory = function () {
+                $http.post(apiURL +'categories/', $scope.category)
+                    .then(function (res) {
+                        console.log("Category created successfully!");
+                        $location.path('/')
+                    }, function(error) {
+                        console.log("Error creating user:", error);
+                    }
+                    );
+            }
+        }])
+        .controller('DetailsController', ['$scope', '$http', '$routeParams', function ($scope, $http, $routeParams) {
+            $scope.details = [];
+
+            $http.get(apiURL +'categories/' + $routeParams.Id)
+                .then(function (res) {
+                    $scope.details = res.data;
+                });
+
+        }])
+        .controller('EditDeleteController', ['$scope', '$http', '$location', '$routeParams', function ($scope, $http, $location, $routeParams) {
+            $scope.edit = [];
+
+            $http.get(apiURL +'categories/' + $routeParams.Id)
+                .then(function (res) {
+                    $scope.edit = res.data;
+                });
+
+            $scope.Edit = function () {
+                $http.put(apiURL +'categories/' + $routeParams.Id, $scope.edit)
+                    .then(function (res) {
+                        $location.path('/');
+                    });
+            };
+            $scope.Delete = function () {
+                $http.delete(apiURL +'categories/' + $routeParams.Id, $scope.edit)
+                    .then(function (res) {
+                        $location.path('/');
+                    });
+            };
+
+        }]);
+
+
+
+</script>

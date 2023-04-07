@@ -1,0 +1,143 @@
+﻿<h2>Event</h2>
+<hr />
+<div ng-app="EventCtrl">
+    <div ng-view>
+
+    </div>
+
+</div>
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular-route.min.js"></script>
+
+
+<script type="text/javascript">
+
+
+    var apiURL = 'https://localhost:44320/api/'
+
+
+
+    angular
+        .module('EventCtrl', ['ngRoute'])
+        .config(function ($routeProvider) {
+            $routeProvider
+                .when('/',
+                    {
+                        templateUrl: 'pages/event/index.html',
+                        controller: 'IndexController'
+                    })
+                .when('/create',
+                    {
+                        templateUrl: 'pages/event/create.html',
+                        controller: 'CreateController'
+                    })
+                .when('/details/:Id',
+                    {
+                        templateUrl: 'pages/event/details.html',
+                        controller: 'DetailsController'
+                    })
+
+                .when('/edit/:Id',
+                    {
+                        templateUrl: 'pages/event/edit.html',
+                        controller: 'EditDeleteController'
+                    })
+                .otherwise({
+                    redirectTo: '/'
+                });
+
+        })
+        .controller('IndexController', ['$scope', '$http', function ($scope, $http) {
+            $scope.events = [];
+            $http.get(apiURL + 'events/')
+                .then(function (res) {
+
+                    $scope.events = res.data;
+                })
+
+        }])
+        .controller('CreateController', ['$scope', '$http', '$location', function ($scope, $http, $location) {
+            $scope.event =
+            {
+                id: 0,
+                name: '',
+                description: '',
+                startDate: '',
+                endDate: '',
+                location: '',
+            };
+
+            $scope.eventCategories = []
+            $http.get(apiURL + 'categories/')
+                .then(function (res) {
+                    $scope.categories = res.data;
+                    for (var i = 0; i < $scope.categories.length; i++) {
+                        $scope.eventCategories[i] = $scope.categories[i].name;
+                    }
+                });
+
+
+            $scope.AddEvent = function () {
+
+                for (var i = 0; i < $scope.categories.length; i++) {
+                    if ($scope.categoryName == $scope.categories[i].name) {
+                        $scope.categoryId = $scope.categories[i].id;
+                    }
+                }
+
+                $http.get(apiURL + 'categories/' + $scope.categoryId)
+                    .then(function (res) {
+                        $scope.event.eventCategory = res.data;
+                        $http.post(apiURL + 'events/', $scope.event)
+                            .then(function (res) {
+                                console.log("Event created successfully!");
+                                $location.path('/')
+                            }, function (error) {
+                                console.log("Error creating user:", error);
+                            }
+                            );
+                    })
+
+                
+            }
+        }])
+        .controller('DetailsController', ['$scope', '$http', '$routeParams', function ($scope, $http, $routeParams) {
+            $scope.details = [];
+
+            $http.get(apiURL + 'events/' + $routeParams.Id)
+                .then(function (res) {
+                    $scope.details = res.data;
+                });
+
+        }])
+        .controller('EditDeleteController', ['$scope', '$http', '$location', '$routeParams', function ($scope, $http, $location, $routeParams) {
+            $scope.edit = [];
+
+            $http.get(apiURL + 'events/' + $routeParams.Id)
+                .then(function (res) {
+                    $scope.edit = res.data;
+                    $scope.edit.startDate = new Date($scope.edit.startDate);
+                    $scope.edit.endDate = new Date($scope.edit.endDate);
+                });
+
+            $scope.Edit = function () {
+
+                $scope.edit.startDate = new Date($scope.edit.startDate).toISOString().substring(0,19)
+                $scope.edit.endDate = new Date($scope.edit.endDate).toISOString().substring(0, 19)
+                console.log($scope.edit.startDate);
+                $http.put(apiURL + 'events/' + $routeParams.Id, $scope.edit)
+                    .then(function (res) {
+                        $location.path('/');
+                    });
+            };
+            $scope.Delete = function () {
+                $http.delete(apiURL + 'events/' + $routeParams.Id, $scope.edit)
+                    .then(function (res) {
+                        $location.path('/');
+                    });
+            };
+
+        }]);
+
+</script>

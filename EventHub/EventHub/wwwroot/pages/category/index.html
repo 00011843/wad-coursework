@@ -1,0 +1,33 @@
+﻿<div class="form-group">
+    <a class="btn btn-primary block" href="#!/create">Create New</a>
+</div>
+<div class="row">
+    <div class="col-md-10">
+        <table class="table">
+            <tbody>
+                <tr>
+                    <th>
+                        Id
+                    </th>
+                    <th>
+                        Name
+                    </th>
+                    <th>
+                        Description
+                    </th>
+                    <th>
+                        Actions
+                    </th>
+                </tr>
+                <tr ng-repeat="cat in categories">
+                    <td>{{cat.id}}</td>
+                    <td>{{cat.name}}</td>
+                    <td ng-if="cat.description.length >= 30">{{cat.description.substring(0,15)}} ...</td>
+                    <td ng-if="cat.description.length < 30">{{cat.description}}</td>
+                    <td><a href="#!/details/{{cat.id}}">View</a> | <a href="#!/edit/{{cat.id}}">Edit</a></td>
+                </tr>
+            </tbody>
+        </table>
+        
+    </div>
+</div>

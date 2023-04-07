@@ -1,0 +1,51 @@
+﻿<div class="form-group">
+    <a class="btn btn-primary block" href="#!/create">Create New</a>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <table class="table">
+            <tbody>
+                <tr>
+                    <th>
+                        Id
+                    </th>
+                    <th>
+                        Name
+                    </th>
+                    <th>
+                        Description
+                    </th>
+                    <th>
+                        Start Date
+                    </th>
+                    <th>
+                        End Date
+                    </th>
+                    <th>
+                        Address
+                    </th>
+                    <th>
+                        Category
+                    </th>
+
+                    <th>
+                        Actions
+                    </th>
+                </tr>
+                <tr ng-repeat="ev in events">
+                    <td>{{ev.id}}</td>
+                    <td>{{ev.name}}</td>
+                    <td ng-if="ev.description.length >= 30">{{ev.description.substring(0,15)}} ...</td>
+                    <td ng-if="ev.description.length < 30">{{ev.description}}</td>
+                    <td>{{ ev.startDate | date : " MMMM d, y" }} </td>
+                    <td>{{ ev.endDate | date : " MMMM d, y" }} </td>
+                    <td>{{ev.location}}</td>
+                    <td>{{ev.eventCategory.name}}</td>
+                    
+                    <td><a href="#!/details/{{ev.id}}">View</a> | <a href="#!/edit/{{ev.id}}">Edit</a></td>
+                </tr>
+            </tbody>
+        </table>
+        
+    </div>
+</div>
